@@ -73,7 +73,7 @@ body {
     width: 35px;
 }   
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1900px) {
     .navbar {
         padding: 0;
         position: relative;
@@ -101,7 +101,7 @@ body {
         /* Support Safari pour backdrop-filter (Apple, c'est chiant). */
         -webkit-backdrop-filter: blur(8px); 
         /* Et les autres navigateurs qui sont meilleurs : */
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(23px);
         width: 100%;
         height: 100vh;
         display: flex;
@@ -119,6 +119,7 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
+        gap: clamp(10px, 2vh, 40px); /* Distance qui devra changer selon l'écran, cela devrait marcher... */
     }
 
     .navbar .nav-links ul li {
@@ -130,5 +131,21 @@ body {
 @media (max-width: 440px) {
     .navbar .logo {
         font-size: 1.7em;
+        left: 40px;
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+        position: absolute;
+        top: 55px;
+        right: 40px;
+        width: 35px;
+    }
+
+    .navbar .nav-links ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: clamp(1px, 0.1vh, 40px); /* Distance qui devra changer selon l'écran, cela devrait marcher... */
     }
 }
